@@ -59,7 +59,7 @@ sms-spam-classifier/
 ├── requirements.txt
 ├── README.md
 │
-├── data.csv
+├── dataset.csv
 │
 ├── templates/
 │   └── index.html

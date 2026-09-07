@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SMS Spam Classifier</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="logo">
+            🛡️
+        </div>
+
+        <div>
+            <h1>SMS Spam Classifier</h1>
+
+            <p>
+                AI-powered message spam detection
+            </p>
+        </div>
+
+    </header>
+
+
+    <!-- Main Card -->
+
+    <main>
+
+        <div class="card">
+
+            <h2>Check Your Message</h2>
+
+            <p class="description">
+                Enter an SMS message below to determine
+                whether it is spam or legitimate.
+            </p>
+
+
+            <!-- Text Area -->
+
+            <div class="textarea-container">
+
+                <textarea
+                    id="message"
+                    maxlength="1000"
+                    placeholder="Type or paste your SMS message here..."
+                ></textarea>
+
+                <div class="counter">
+                    <span id="charCount">0</span>/1000
+                </div>
+
+            </div>
+
+
+            <!-- Examples -->
+
+            <div class="examples">
+
+                <span>Try an example:</span>
+
+                <button onclick="useExample(0)">
+                    🎁 Prize Message
+                </button>
+
+                <button onclick="useExample(1)">
+                    👋 Normal Message
+                </button>
+
+            </div>
+
+
+            <!-- Check Button -->
+
+            <button
+                class="check-btn"
+                onclick="checkMessage()"
+                id="checkBtn">
+
+                🔍 Check Message
+
+            </button>
+
+
+            <!-- Loading -->
+
+            <div
+                id="loading"
+                class="loading hidden">
+
+                <div class="spinner"></div>
+
+                <span>Analyzing message...</span>
+
+            </div>
+
+
+            <!-- Result -->
+
+            <div
+                id="result"
+                class="result hidden">
+
+                <div id="resultIcon"
+                     class="result-icon">
+                </div>
+
+                <div>
+
+                    <h2 id="resultTitle">
+                    </h2>
+
+                    <p id="resultDescription">
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Probability -->
+
+            <div
+                id="probabilityBox"
+                class="probability hidden">
+
+                <div class="probability-header">
+
+                    <span>Spam Probability</span>
+
+                    <strong id="spamProbability">
+                        0%
+                    </strong>
+
+                </div>
+
+                <div class="progress">
+
+                    <div
+                        id="progressBar"
+                        class="progress-bar">
+                    </div>
+
+                </div>
+
+                <div class="probability-footer">
+
+                    <span>
+                        Legitimate:
+                        <strong id="legitimateProbability">
+                            0%
+                        </strong>
+                    </span>
+
+                    <span>
+                        Spam:
+                        <strong id="spamProbability2">
+                            0%
+                        </strong>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+</div>
+
+
+<script src="{{ url_for('static', filename='script.js') }}">
+</script>
+
+</body>
+
+</html>
